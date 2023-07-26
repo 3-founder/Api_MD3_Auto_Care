@@ -46,6 +46,7 @@ class ProductPenawaranController extends Controller
             'tipe_mesin' => $request->tipe_mesin,
             'harga' => $request->harga,
             'id_penawaran' => $request->id_penawaran,
+            'type_product' => $request->type_product,
         ];
 
         $result = ProductPenawaran::create($data);
@@ -73,6 +74,7 @@ class ProductPenawaranController extends Controller
             'tipe_mesin' => $request->tipe_mesin,
             'harga' => $request->harga,
             'id_penawaran' => $request->id_penawaran,
+            'type_product' => $request->type_product,
         ];
 
         $result = ProductPenawaran::where('id', $id)->update($data);

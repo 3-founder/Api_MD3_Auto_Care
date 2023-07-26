@@ -31,6 +31,7 @@ class ProductPenawaranRequest extends FormRequest
                 'tipe_mesin' => 'required|string|min:2|max:50',
                 'harga' => 'required|int',
                 'id_penawaran' => 'required',
+                'type_product' => 'required',
             ];
         } else {
             return [
@@ -42,6 +43,7 @@ class ProductPenawaranRequest extends FormRequest
                 'tipe_mesin' => 'required|string|min:2|max:50',
                 'harga' => 'required|int|min:3|max:15',
                 'id_penawaran' => 'required',
+                'type_product' => 'required',
             ];
         }
     }
@@ -58,6 +60,7 @@ class ProductPenawaranRequest extends FormRequest
                 'tipe_mesin.required' => 'Tipe Mesin Tidak boleh kosong, min 3 max 50 karakter',
                 'harga.required' => 'Harga Tidak boleh kosong, min 3 angka',
                 'id_penawaran.required' => 'Id Penawaran Tidak boleh kosong',
+                'type_product.required' => 'Tipe Produk harus di pilih',
             ];
         } else {
             return [
@@ -69,6 +72,7 @@ class ProductPenawaranRequest extends FormRequest
                 'tipe_mesin.required' => 'Tipe Mesin Tidak boleh kosong, min 3 max 50 karakter',
                 'harga.required' => 'Harga Tidak boleh kosong, min 3 angka',
                 'id_penawaran.required' => 'Id Penawaran Tidak boleh kosong',
+                'type_product.required' => 'Tipe Produk harus di pilih',
             ];
         }
     }

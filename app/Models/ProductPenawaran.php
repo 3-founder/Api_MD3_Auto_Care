@@ -19,5 +19,6 @@ class ProductPenawaran extends Model
         'tipe_mesin',
         'harga',
         'id_penawaran',
+        'type_product',
     ];
 }
