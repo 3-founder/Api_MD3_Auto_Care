@@ -13,16 +13,30 @@ class ProductPenawaranController extends Controller
     public function index($id)
     {
         $product = ProductPenawaran::where('id_penawaran', $id)->get();
+        $productMain = ProductPenawaran::where([
+            ['id_penawaran', $id],
+            ['type_product', 'main']
+        ])->get();
+        $productAdditional = ProductPenawaran::where([
+            ['id_penawaran', $id],
+            ['type_product', 'additional']
+        ])->get();
         $penawaran = Penawaran::where('id', $id)->with(['signatureUser'])->get();
         return $penawaran != '[]' ? response()->json([
             'success' => true,
             'message' => "Data Product Penawaran",
             'data' => $product != '[]' ? [
                 'type_product' => true,
-                'product_penawaran' => $product,
+                'product_penawaran' => array(
+                    'main' => $productMain,
+                    'additional' => $productAdditional,
+                ),
             ] : array(
                 'type_product' => false,
-                'product_penawaran' => $product,
+                'product_penawaran' => array(
+                    'main' => $productMain,
+                    'additional' => $productAdditional,
+                ),
             ),
 
             'penawaran' => $penawaran,
@@ -30,7 +44,10 @@ class ProductPenawaranController extends Controller
                         'success' => false,
                         'message' => "Data product penawaran",
                         'data' => array(
-                            'product_penawaran' => $product,
+                            'product_penawaran' => array(
+                                'main' => $productMain,
+                                'additional' => $productAdditional,
+                            ),
                         ),
                         'penawaran' => $penawaran,
                     ]);
