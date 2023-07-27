@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\InvoiceOnlyController;
 use App\Http\Controllers\Api\PenawaranController;
+use App\Http\Controllers\Api\ProductInvoiceOnlyController;
 use App\Http\Controllers\Api\ProductPenawaranController;
 use App\Http\Controllers\Api\SignatureUserController;
 use Illuminate\Http\Request;
@@ -45,3 +47,14 @@ Route::post('/product-penawaran', [ProductPenawaranController::class, 'create'])
 Route::get('/product-penawaran/{id}', [ProductPenawaranController::class, 'index']);
 Route::post('/edit-product-penawaran/{id}', [ProductPenawaranController::class, 'update']);
 Route::delete('/delete-product-penawaran/{id}', [ProductPenawaranController::class, 'destroy']);
+
+// Invoice Only
+Route::get('/invoice-only', [InvoiceOnlyController::class, 'index']);
+Route::get('/invoice-only/{id}', [InvoiceOnlyController::class, 'indexById']);
+Route::post('/invoice-only', [InvoiceOnlyController::class, 'create']);
+Route::post('/invoice-only-update/{id}', [InvoiceOnlyController::class, 'update']);
+
+// Product Invoice only
+Route::get('/invoice-only-product/{id}', [ProductInvoiceOnlyController::class, 'index']);
+Route::post('/invoice-only-product', [ProductInvoiceOnlyController::class, 'create']);
+Route::post('/invoice-only-product-update/{id}', [ProductInvoiceOnlyController::class, 'update']);
