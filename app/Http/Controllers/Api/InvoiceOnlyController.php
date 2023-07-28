@@ -104,4 +104,22 @@ class InvoiceOnlyController extends Controller
             ]);
         }
     }
+
+    public function filterDate(Request $request)
+    {
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $result = InvoiceOnly::with(['signatureUser'])->whereBetween('tanggal', [$startDate, $endDate])->get();
+
+        return $result != '[]' ? response()->json([
+            'success' => true,
+            'message' => "Data Invoice",
+            'data' => $result,
+        ]) : response()->json([
+                        'success' => false,
+                        'message' => "Data Invoice",
+                        'data' => $result,
+                    ]);
+    }
 }

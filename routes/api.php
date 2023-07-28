@@ -53,6 +53,7 @@ Route::get('/invoice-only', [InvoiceOnlyController::class, 'index']);
 Route::get('/invoice-only/{id}', [InvoiceOnlyController::class, 'indexById']);
 Route::post('/invoice-only', [InvoiceOnlyController::class, 'create']);
 Route::post('/invoice-only-update/{id}', [InvoiceOnlyController::class, 'update']);
+Route::get('/filter/invoice-only', [InvoiceOnlyController::class, 'filterDate']);
 
 // Product Invoice only
 Route::get('/invoice-only-product/{id}', [ProductInvoiceOnlyController::class, 'index']);
