@@ -31,6 +31,7 @@ class InvoiceOnlyRequest extends FormRequest
                 'tanggal_jatuh_tempo' => 'required|date',
                 'metode_pembayaran' => 'required',
                 'id_user_signature' => 'required',
+                'ket_pembayaran' => 'required',
             ];
         } else {
             return [
@@ -41,6 +42,7 @@ class InvoiceOnlyRequest extends FormRequest
                 'tanggal_jatuh_tempo' => 'required|date',
                 'metode_pembayaran' => 'required',
                 'id_user_signature' => 'required',
+                'ket_pembayaran' => 'required',
             ];
         }
     }
@@ -56,6 +58,7 @@ class InvoiceOnlyRequest extends FormRequest
                 'tanggal_jatuh_tempo.required' => 'Tanggal Jatuh Tempo Wajib di isi',
                 'metode_pembayaran.required' => 'Metode Pembayaran Wajib di isi',
                 'id_user_signature.required' => 'Id User Ttd Wajib di isi',
+                'ket_pembayaran.required' => 'Keterangan Pembayaran Wajib di Pilih',
             ];
         } else {
             return [
@@ -66,6 +69,7 @@ class InvoiceOnlyRequest extends FormRequest
                 'tanggal_jatuh_tempo.required' => 'Tanggal Jatuh Tempo Wajib di isi',
                 'metode_pembayaran.required' => 'Metode Pembayaran Wajib di isi',
                 'id_user_signature.required' => 'Id User Ttd Wajib di isi',
+                'ket_pembayaran.required' => 'Keterangan Pembayaran Wajib di Pilih',
             ];
         }
     }

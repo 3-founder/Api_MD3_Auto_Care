@@ -26,6 +26,7 @@ class InvoiceOnly extends Model
         'no_rekening',
         'a_n_rekening',
         'id_user_signature',
+        'ket_pembayaran',
     ];
 
     public function signatureUser(): BelongsTo

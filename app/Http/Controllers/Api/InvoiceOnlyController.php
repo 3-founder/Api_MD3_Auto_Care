@@ -54,6 +54,7 @@ class InvoiceOnlyController extends Controller
             'no_rekening' => $request->no_rekening,
             'a_n_rekening' => $request->a_n_rekening,
             'id_user_signature' => $request->id_user_signature,
+            'ket_pembayaran' => $request->ket_pembayaran,
         ];
 
         $result = InvoiceOnly::create($data);
@@ -62,6 +63,7 @@ class InvoiceOnlyController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => "Berhasil Menambahkan Data Invoice",
+                'data' => $result,
             ]);
         } else {
             return response()->json([
@@ -88,6 +90,7 @@ class InvoiceOnlyController extends Controller
             'no_rekening' => $request->no_rekening,
             'a_n_rekening' => $request->a_n_rekening,
             'id_user_signature' => $request->id_user_signature,
+            'ket_pembayaran' => $request->ket_pembayaran,
         ];
 
         $result = InvoiceOnly::where('id', $id)->update($data);
