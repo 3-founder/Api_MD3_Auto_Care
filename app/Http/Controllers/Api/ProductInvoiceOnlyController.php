@@ -78,4 +78,21 @@ class ProductInvoiceOnlyController extends Controller
             ]);
         }
     }
+
+    public function destroy($id)
+    {
+        $product = ProductInvoiceOnly::find($id)->delete();
+
+        if ($product) {
+            return response()->json([
+                'success' => true,
+                'message' => "Berhasil Menghapus Data Product Invoice",
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "Gagal Menghapus Data Product Invoice",
+            ]);
+        }
+    }
 }
