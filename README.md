@@ -16,4 +16,5 @@
 5. php artisan storage:link
 6. php artisan serve --host=IP_Address_WIFI_Anda
 7. Lanjut Setting di Utils Mobile
+8. Selesai
 
